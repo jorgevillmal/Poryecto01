@@ -11,8 +11,8 @@ package menu;
  */
 public class Pizza extends MenuItem {
 
-    public Pizza(String name, String description, double price) {
-        super(name, description, price);
+    public Pizza(String name, String description, double price,int id) {
+        super(name, description, price, id);
     }
     
 }

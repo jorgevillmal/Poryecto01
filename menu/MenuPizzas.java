@@ -8,6 +8,7 @@ public class MenuPizzas extends Menu{
     private String description;
     private int numberItems = 0;
     private static final int max = 4;
+    private int id;
 
     public MenuPizzas(String name, String description){
         this.name = name;

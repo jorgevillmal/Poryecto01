@@ -5,38 +5,26 @@ import ModuloPrincipal.*;
 public class EstadoSuspendido implements ModuloEstados{
 
     public Robot robot;
-    public int ida_regreso;
-    public int tipoCasa;
 
-    public EstadoSuspendido(Robot robot, int num, int casa){
-        this.robot = robot;
-        this.ida_regreso = num;
-        this.tipoCasa = casa;
-    }
-
-    public EstadoSuspendido(Robot robot, int num){
-        this.robot = robot;
-        this.ida_regreso = num;
-    }
     public EstadoSuspendido(Robot robot){
         this.robot = robot;
     }
 
     public void doAction(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("El robot esta suspendido en la estacion de descanso esperando a ser activado...");
+        System.out.println("El robot esta durmiendo esperando a un cliente......");
 
-        System.out.println("Desea iniciar al robot constructor? y/n");
-        //String a = sc.nextLine();
-        //a = a.toLowerCase();
-        if(sc.next().equals("y")){
+        System.out.println("Desea usted entrar a la tienda? esto encendera el robor mesero de enseguida! y/n?");
+        String a = sc.nextLine();
+        a = a.toLowerCase();
+        if(a.equals("y")){
             //poner a correr el robot en el estado activado
-            EstadoActivado activado = new EstadoActivado(robot, ida_regreso, tipoCasa);
-            robot.setState(activado);
+            EstadoRecibiendoOrden cajero = new EstadoRecibiendoOrden(robot);
+            robot.setEstado(cajero);
             robot.doAction();
-        }else if(sc.next().equals("n")){
+        }else if(a.equals("n")){
             //El usuario no quiere correr el robot
-            System.out.println("Cerrando el programa...");
+            System.out.println("Vuelva en otro momento al restaurante!");
         }else{
             System.out.println("Selecciona \"y\" para iniciar al robot o \"n\" para salir del programa");
             robot.doAction();

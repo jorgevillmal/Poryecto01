@@ -16,21 +16,23 @@ public class Mercancia extends AdaptadorMercancia{
     private double precio;
     private String color;
     private String material;
+    private int id;
     
-    public Mercancia(String nombre, String tipo, double precio, String color, String material){
+    public Mercancia(String nombre, String tipo, double precio, String color, String material,int id){
    
         this.nombre = nombre;
         this.material = material;
         this.color = color;
         this.tipo = tipo;
         this.precio = precio;
+        this.id = id;
         
     }
     
     @Override
     public void print(){
         
-        System.out.println(" " + getNombre());
+        System.out.println("ID:  " + getId()  + "   " + getNombre());
         System.out.println(", " + getTipo());
         System.out.println(", " + getColor());
         System.out.println(", " + getTipo());
@@ -57,6 +59,8 @@ public class Mercancia extends AdaptadorMercancia{
         return material;
     }
 
-    
+    public int getId(){
+        return id;
+    }
     
 }

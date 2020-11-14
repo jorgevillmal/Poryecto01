@@ -9,6 +9,10 @@ package menu;
  *
  * @author George
  */
-public class Hamburguesa {
+public class Hamburguesa extends MenuItem {
+
+    public Hamburguesa(String name, String description, double price, int id) {
+        super(name, description, price, id);
+    }
     
 }

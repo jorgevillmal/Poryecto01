@@ -7,6 +7,7 @@ public class MenuHamburguesas extends Menu{
     private ArrayList<MenuComponent> listaHamburguesas = new ArrayList<MenuComponent>();
     private String name;
     private String description;
+    private int numberItems = 0;  
 
     public MenuHamburguesas(String name, String description){
         this.name = name;

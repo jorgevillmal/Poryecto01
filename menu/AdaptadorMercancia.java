@@ -18,7 +18,7 @@ public class AdaptadorMercancia extends MenuItem {
     
     public AdaptadorMercancia(Mercancia mercancia) {
         
-        super(mercancia.getName(), mercancia.getDescription(),mercancia.getPrice());
+        super(mercancia.getName(), mercancia.getDescription(),mercancia.getPrice(), mercancia.getId());
         
         this.mercancia = mercancia;
     }

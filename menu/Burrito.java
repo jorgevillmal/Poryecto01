@@ -9,6 +9,10 @@ package menu;
  *
  * @author George
  */
-public class Burrito {
+public class Burrito extends MenuItem {
+
+    public Burrito(String name, String description, double price,int id) {
+        super(name, description, price, id);
+    }
     
 }
