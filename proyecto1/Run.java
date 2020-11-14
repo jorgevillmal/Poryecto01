@@ -17,11 +17,19 @@ public class Run{
         allMenus.add(pizzas);
         allMenus.add(hamburguesas);
 
-        burrito.add(new MenuItem("MEXICAN BURRITO", "CALIENTE", 27));
-        burrito.add(new MenuItem("CLASSIC BURRITO", "EL CLASICO", 25));
+        burrito.add(new Burrito("MEXICAN BURRITO", "CALIENTE", 27));
+        burrito.add(new Burrito("CLASSIC BURRITO", "EL CLASICO", 25));
+        burrito.add(new Burrito("BURRITO RANCHERO", "CLASICO", 75));
+        burrito.add(new Burrito("BURRO BBQ", "ESPECIAL", 100));
+        burrito.add(new Burrito("CARNE ASADA", "ESPECIAL", 90));
 
-        pizzas.add(new MenuItem("HAWAIANNA","con piña y jamon",100));
-        pizzas.add(new MenuItem("ALLMEATS","con chorizo y SALAMAI",100));
+        pizzas.add(new Pizza("HAWAIANNA","con piña y jamon",100));
+        pizzas.add(new Pizza("ALLMEATS","con chorizo y SALAMAI",100));
+        pizzas.add(new Pizza("FLORENTINA","tomate, queso paremesano y espinacas",160));
+        pizzas.add(new Pizza("JULIANA","pepperoni, cebolla y jalapeno",120));
+        pizzas.add(new Pizza("VERONA","chistorra, salami, queso crema",140));
+
+
 
         hamburguesas.add(new MenuItem("CLASSIC HAMBURGUER","CON QUESO Y CARNE",50));
 
