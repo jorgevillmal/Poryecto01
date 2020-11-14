@@ -9,6 +9,19 @@ package menu;
  *
  * @author George
  */
-public class AdaptadorMercancia {
+public class AdaptadorMercancia extends MenuItem {
+    private Mercancia mercancia;
+    
+     public AdaptadorMercancia() {
+        mercancia = null;
+    }
+    
+    public AdaptadorMercancia(Mercancia mercancia) {
+        
+        super(mercancia.getName(), mercancia.getDescription(),mercancia.getPrice());
+        
+        this.mercancia = mercancia;
+    }
+    
     
 }

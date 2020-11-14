@@ -13,7 +13,11 @@ public class MenuItem extends MenuComponent{
         this.description = description;
         this.price = price;
     }
-
+    
+    public MenuItem() {
+        
+    }
+    
     public String getName() {
         return name;
     }

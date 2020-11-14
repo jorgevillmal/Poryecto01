@@ -32,7 +32,7 @@ public class MenuPizzas extends Menu{
             System.out.println("Ya no caben recuerda que el menu solo contiene 4 pizzas");
 
         }   else {
-                arregloPizzas[numberItems] = menuComponent;
+                arregloPizzas[numberItems++] = menuComponent;
             }
     }
 
