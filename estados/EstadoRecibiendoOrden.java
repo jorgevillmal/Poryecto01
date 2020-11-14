@@ -6,49 +6,45 @@ import ModuloPrincipal.*;
 public class EstadoRecibiendoOrden implements ModuloEstados{
 
     public Robot robot;
-    public int ida_regreso;
+    public int num;
 
     public EstadoRecibiendoOrden(Robot robot, int num){
         this.robot = robot;
         this.ida_regreso = num;
     }
 
-    public EstadoRecibiendoOrden(Robot robot){
-        this.robot = robot;
-    }
-
-    private void menu_aux(){
-        System.out.println("Eliga una de las siguientes opciones ");
-        System.out.println("para el esqueleto de la casa:  1. Esqueleto de concreto - $500,000");
-        System.out.println("2. Esqueleto reforzado - $1,000,000 ");
-    }
-
     public void doAction(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Eliga una de las siguientes opciones para el esqueleto de la casa: ");
-        System.out.println("1. Esqueleto de concreto - $500,000");
-        System.out.println("2. Esqueleto reforzado - $1,000,000 ");
-        System.out.println("Porfavor escriba un numero para seleccionar: ");
-        String a = scanner.nextLine();
-        System.out.println("Eliga una de las siguientes opciones para el aislamiento de la casa:");
-        System.out.println("1. Aislamiento de concreto - $2,000,000 ");
-        System.out.println("2. Aislamiento de vidrio - $2,500,000 ");
-        System.out.println("3. Aislamiento de madera - $1,000,000 ");
-        System.out.println("4. Aislamiento reforzado - $3,000,000 ");
-        System.out.println("Porfavor escriba un numero para seleccionar: ");
-        String b = scanner.nextLine();
-
-        //La suma de lo recibido por el usuario determinara el estado correcto a implementar.
-        String sum = a + b;
-        int i = Integer.parseInt(sum);
-
-        if(i < 11 || i > 24){
-            System.out.println("Solamente puedes escribir los numeros mostrados en la pantalla Porfavor elige nuevamente!");
-            this.doAction();
-        }
+      if(!(num==666)){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("El robot esta depertando ... ");
+        System.out.println("Robot: Gusta que le tomen la orden?");
+        System.out.println("Cliente: Por su puesto me muestra el menu?");
+        //se despliega todo el menu de opciones
+        robot.printMenu();
+        recibeOrden();
         //poner a correr el robot en el estado caminando
         EstadoCaminando caminando = new EstadoCaminando(robot, 1, i);
-        robot.setState(caminando);
+        robot.setEstado(caminando);
         robot.doAction();
+      }else{
+          System.out.println("Aqui tiene su comida!!");
+      }
+
+    }
+
+
+    private static void recibeOrden(){
+      System.out.println("Que opcion le gusto? porfavor escriba el numero de id de su comida! ");
+      Scanner sc = new Scanner(System.in);
+      //cota superior e inferior
+      if(!(num < 0 || num > 15)){
+        //pasamos falso para que el robot imprima que va en el camino de vuelta con el pedido
+        EstadoCaminando caminando = new EstadoCaminando(robot, num, false);
+        robot.setEstado(caminando);
+        robot.doAction();
+      }else{
+        System.out.println("La id tiene que ser de algun producto! cheque el numero nuevamente!");
+        recibeOrden();
+      }
     }
 }
